@@ -1,10 +1,12 @@
 import './App.css';
-import Navbar from './components/Navbar';
+import Navbar from './components/Navbar/Navbar';
+import SearchBar from './components/Searchbar/Searchbar';
 
 function App() {
   return (
     <div className="App">
      <Navbar />
+     <SearchBar /> 
     </div>
   );
 }

@@ -1,10 +1,10 @@
 import React from "react";
+import NavBrand from "./navbar.styled.component"
 
 function Navbar() {
 return(
 <>
-<h1>Feel Vegan</h1>
-
+<NavBrand> Feel Vegan </NavBrand>
 </>
 );
 }
