@@ -1,11 +1,11 @@
 import React from "react";
-import NavBrand from "./navbar.styled.component"
+import {Container ,NavBrand} from "./navbar.styled.component"
 
 function Navbar() {
 return(
-<>
-<NavBrand> Feel Vegan </NavBrand>
-</>
+<Container>
+   <NavBrand> Feel Vegan </NavBrand> 
+</Container>
 );
 }
 

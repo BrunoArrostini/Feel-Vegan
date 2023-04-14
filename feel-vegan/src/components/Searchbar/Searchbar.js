@@ -1,12 +1,12 @@
 import React from "react";
+import {Container, Searchbar, Label} from "./searchbar.styled.compenent"
 
 function SearchBar() {
 return(
-    <div>
-        <label>Type in a food</label>
-        <input type="text" />
-    </div>
-    
+    <Container>
+          <Label>TYPE IN A FOOD</Label>
+          <Searchbar type= "text" ></Searchbar>  
+    </Container>
 )
 }
 
