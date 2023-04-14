@@ -1,7 +1,7 @@
 import React from "react";
-import {Container ,NavBrand, Searchbar} from "./styles/navbar.styled";
-import { Wrapper } from "./styles/navbar.styled";
+import {Container ,NavBrand, Searchbar, Wrapper} from "./styles/navbar.styled";
 import {BiSearch} from "react-icons/bi"
+import {ImLeaf} from "react-icons/im"
 
 function Navbar() {
 return(
@@ -10,7 +10,7 @@ return(
       <BiSearch className="lens"/>
       <Searchbar type= "text" placeholder="What you'd like to eat?"></Searchbar>
    </Wrapper>
-   <NavBrand> Feel Vegan </NavBrand> 
+   <NavBrand> Feel Vegan <ImLeaf /> </NavBrand> 
 </Container>
 );
 }
