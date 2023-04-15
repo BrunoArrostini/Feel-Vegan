@@ -8,7 +8,7 @@ return(
 <Container>
    <Wrapper>
       <BiSearch className="lens"/>
-      <Searchbar type= "text" placeholder="What you'd like to eat?"></Searchbar>
+      <Searchbar type= "text" placeholder="Cosa vuoi mangiare?"></Searchbar>
    </Wrapper>
    <NavBrand> Feel Vegan <ImLeaf /> </NavBrand> 
 </Container>

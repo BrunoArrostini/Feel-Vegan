@@ -7,6 +7,8 @@ background-color: #99ff99;
 display: flex;
 justify-content: space-between;
 align-items: center;
+position: -webkit-sticky;
+top: 0;
 `;
 
 export const Wrapper = styled.div`
@@ -33,7 +35,7 @@ outline:none;
 
 export const NavBrand = styled.h1`
 color: white;
-font-size: 25px;
+font-size: 20px;
 font-weight: 700;
-margin-right: 12px;
+margin-right: 10px;
 `;
