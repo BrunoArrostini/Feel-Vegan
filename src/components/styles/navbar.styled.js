@@ -1,21 +1,17 @@
 import React from "react";
 import styled from "styled-components";
 
-export const Container = styled.nav`
-height: 70px;
-background-color: #99ff99;
-display: flex;
-justify-content: space-between;
-align-items: center;
-position: -webkit-sticky;
-top: 0;
-`;
-
 export const Wrapper = styled.div`
 display: flex;
-align-items: center;
+width: 100%;
+max-height: 400px;
 position: relative;
-margin-left: 12px;
+`;
+
+export const SearchWrapper = styled.div`
+position: absolute;
+left: 20px;
+top: 20px;
 `;
 
 export const Searchbar = styled.input`
@@ -34,8 +30,10 @@ outline:none;
 `;
 
 export const NavBrand = styled.h1`
-color: white;
-font-size: 20px;
-font-weight: 700;
-margin-right: 10px;
+font-size: 25px;
+font-weight: 500;
+position: absolute;
+right: 10px;
+top: 20px;
+color: black;
 `;
