@@ -1,21 +1,41 @@
 import React from "react";
-import {Wrapper, Searchbar, NavBrand, SearchWrapper} from "./styles/navbar.styled";
+import {Wrapper, Searchbar, NavBrand, SearchWrapper, Text, Form} from "./styles/navbar.styled";
 import {BiSearch} from "react-icons/bi"
 import {ImLeaf} from "react-icons/im"
 import vegan from "../images/vegan.png"
 
 function Navbar() {
-return(
+
+  const [formData, setFormData] = React.useState({data:""})
+  
+ function handleChange(e) {
+    setFormData(e.target.value)
+ } 
+ 
+ function handleSubmit(e) {
+    e.preventDefault();
+ }
+
+ return(
      <Wrapper>
        <img src={vegan} style={{
-        width:"100%",
-        minHeight:"300px",                                                                 
+        width: "100%",
+        minHeight:"300px"                                                                
         }}></img>
        <SearchWrapper>
-          <BiSearch className="lens"/>
-          <Searchbar type= "text" placeholder= "Cosa vuoi mangiare?"></Searchbar>
+          <Form onSubmit={handleSubmit}>
+            <BiSearch className="lens" />
+            <Searchbar 
+              type= "text" 
+              name="data"
+              value={formData.data}
+              onChange={handleChange}
+              placeholder= "Cosa vuoi mangiare?">
+          </Searchbar>
+          </Form>
        </SearchWrapper>                             
        <NavBrand> Feel Vegan <ImLeaf /> </NavBrand> 
+       <Text>Liberi di essere sè stessi</Text>
      </Wrapper>   
 );
 }

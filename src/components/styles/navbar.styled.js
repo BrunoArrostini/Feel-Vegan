@@ -1,11 +1,24 @@
 import React from "react";
 import styled from "styled-components";
 
+export const CardContainer = styled.div`
+margin: 0;
+margin-left: 20px;
+margin-right: 20px;
+width: 100%;
+display: flex;
+flex-direction: row;
+overflow-x: scroll;
+`;
+
 export const Wrapper = styled.div`
 display: flex;
 width: 100%;
-max-height: 400px;
+max-height: 450px;
 position: relative;
+`;
+
+export const Form = styled.form`
 `;
 
 export const SearchWrapper = styled.div`
@@ -36,4 +49,26 @@ position: absolute;
 right: 10px;
 top: 20px;
 color: black;
+text-shadow: 1px 2px white;
+`;
+
+export const Text = styled.h2`
+color: white;
+font-weight: 400;
+font-size: 60px;
+position: absolute;
+bottom: 40%;
+left: 7%;
+text-shadow: 1px 2px black;
+
+@media (max-width: 720px){
+    font-size: 30px;
+}
+
+`;
+
+export const Title = styled.h1`
+font-weight: 500;
+margin-left: 30px;
+margin-top: 20px;
 `;
