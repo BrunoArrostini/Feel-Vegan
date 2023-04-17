@@ -23,8 +23,6 @@ function App() {
         <Card />
         <Card />
         <Card />
-        <Card />
-        <Card />
       </CardContainer>
      </div>
      <Footer />
