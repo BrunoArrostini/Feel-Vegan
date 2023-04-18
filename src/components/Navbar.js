@@ -10,30 +10,16 @@ function Navbar() {
   
  const handleChange = (e) => {
     setFormData(e.target.value)
- } 
+  } 
  
  const handleSubmit = (e) => {
     e.preventDefault();
-    getRecipes();
- }
-
- const [recipe, setRecipes] = React.useState([]);
-      React.useEffect(() => {
-      getRecipes()
-      }, []);
-
-
-     const getRecipes = async () => {
-      const api = await fetch(
-      `https://api.spoonacular.com/recipes/random?apiKey=${`c861de17b1ea4cd8bb78cc92a6cd4859`}&number=9&tags=vegetarian`);
-      const data = await api.json();
-     setRecipes(data.recipes);
-    };
+  }
 
  return(
 
      <Wrapper>
-       <img src={vegan} style={{
+       <img src={vegan} alt="" style={{
         width: "100%",
         minHeight:"300px"                                                                
         }}></img>
@@ -50,7 +36,7 @@ function Navbar() {
           </Form>
        </SearchWrapper>                             
        <NavBrand> Feel Vegan <ImLeaf /> </NavBrand> 
-       <Text>Liberi di essere sè stessi</Text>
+       <Text>Feel free to be yourself</Text>
      </Wrapper>   
 );
 }

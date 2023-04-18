@@ -1,22 +1,22 @@
 import React from "react";
-import {Container, TopWrapper, PicContainer, Title, Description, Time, BottomWrapper, Calories, Protein} from "./styles/card.styled"
-import vegan from "../images/vegan.png"
+import {Container, TopWrapper, PicContainer, Title, Vegetarian,
+     Time, BottomWrapper, Gluten , Vegan} from "./styles/card.styled"
 
-function Card({title, description, time, calories, protein}) {
+function Card({title, image, vegan, time, glutenFree, vegetarian, name}) {
 
     return(
         <Container>
             <TopWrapper>
                 <PicContainer>
-                    <img src={vegan} style={{width:"100%", borderBottom:"0.2px solid lightgray"}} ></img>
+                    <img src={image} style={{width:"100%", borderBottom:"0.2px solid lightgray"}} alt={name} ></img>
                 </PicContainer>
-                <Title> {title} demo</Title>
-                <Description> {description} demo</Description>
-                <Time> {time} demo</Time>
+                <Title> {title} </Title>
+                <Time> {time}' minutes </Time>
             </TopWrapper>
             <BottomWrapper>
-                <Calories> {calories} demo</Calories>
-                <Protein> {protein} demo</Protein>
+                <Vegetarian> {vegetarian} </Vegetarian>
+                <Gluten> {glutenFree} </Gluten>
+                <Vegan> {vegan} </Vegan>
             </BottomWrapper>
         </Container>
     )

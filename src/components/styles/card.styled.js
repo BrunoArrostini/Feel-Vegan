@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 
 export const Container = styled.div`
@@ -25,11 +24,11 @@ color: gray;
 font-weight: 400;
 `;
 
-export const Description = styled.h5`
+export const Vegetarian = styled.h5`
 margin-left: 5px;
 margin-right: 5px;
-font-weight: 200;
-font-size: 1rem;
+font-weight: 100;
+font-size: 48px;
 `;
 
 export const Time = styled.p`
@@ -39,16 +38,19 @@ font-size: 0.8rem;
 `;
 
 export const BottomWrapper = styled.div`
+display: flex;
+justify-content: center;
+margin-bottom: 0;
 `;
 
-export const Calories = styled.p`
+export const Gluten = styled.h5`
 margin-left: 5px;
 margin-right: 5px;
-font-size: 1rem;
+font-size: 50px;
 `;
 
-export const Protein = styled.p`
+export const Vegan = styled.h5`
 margin-left: 5px;
 margin-right: 5px;
-font-size: 1rem;
+font-size: 48px;
 `;
