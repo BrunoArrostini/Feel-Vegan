@@ -1,6 +1,6 @@
 import React from "react";
 import {Container, TopWrapper, PicContainer, Title, Vegetarian,
-     Time, BottomWrapper, Gluten , Vegan} from "./styles/card.styled"
+     Time, BottomWrapper, Gluten , Vegan} from "./styles/card.styled"   
 
 function Card({title, image, vegan, time, glutenFree, vegetarian, name}) {
 
