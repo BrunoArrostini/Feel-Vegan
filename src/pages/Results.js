@@ -1,5 +1,5 @@
 import React from 'react'
-import {useParams} from "react-router-dom"
+import {useParams, Link} from "react-router-dom"
 import {Container, TopWrapper, PicContainer, Title, BottomWrapper, Grid, Covertitle} from "./styles/results.styled"
 
 function Results() {
@@ -13,18 +13,20 @@ function Results() {
         );
         const datas = await api.json();
         setAllResults(datas.results);
-        console.log(datas.results)
     };
 
     React.useEffect(() => {
         fetchResults(param.result);
     }, [param.result]);
 
-  return <Grid>
-         <Covertitle>Best Recipes with {param.result}</Covertitle>   
-        {allResults.map((item)=>{
+  return (
+        <>
+         <Covertitle>Best Recipes with {param.result}</Covertitle>
+            <Grid>
+             {allResults.map((item)=>{
             return (
-                <Container>
+                <Container key={item.id}>
+                  <Link to={"/recipes/" + item.id} style={{textDecoration:"none"}}>
                     <TopWrapper>
                          <PicContainer>
                              <img src={item.image} style={{width:"100%", borderBottom:"0.2px solid lightgray"}} alt={item.name} ></img>
@@ -33,10 +35,13 @@ function Results() {
                     <BottomWrapper>
                         <Title> {item.title} </Title>
                     </BottomWrapper>
+                  </Link>
                 </Container>
             )
         })}
-    </Grid>
+         </Grid>
+        </>
+     )
 }
 
 export default Results

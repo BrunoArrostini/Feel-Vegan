@@ -5,6 +5,7 @@ import {TiLeaf} from "react-icons/ti"
 import {TbLetterV} from "react-icons/tb"
 import {CiWheat} from "react-icons/ci"
 import {CardContainer} from "../components/styles/card.styled"
+import Info from '../components/Info'
 
 function Main() {
 
@@ -32,6 +33,7 @@ function Main() {
               vegetarian={<TbLetterV style={{color:"#99ff99"}}/>}  />
             ))}
         </CardContainer>
+        <Info />
       </div>
     </div>
   )

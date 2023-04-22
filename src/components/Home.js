@@ -37,7 +37,7 @@ function Home() {
               name="data"
               value={formData.data}
               onChange={handleChange}
-              placeholder= "Cosa vuoi mangiare?">
+              placeholder= "Search for a food...">
           </Searchbar>
           </Form>
        </SearchWrapper>                             

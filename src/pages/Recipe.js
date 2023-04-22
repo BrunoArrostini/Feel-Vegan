@@ -1,31 +1,44 @@
-import React from 'react'
-import Card from '../components/Card'
-import {CardContainer} from "../components/styles/card.styled"
+import React from "react"
+import {useParams} from "react-router-dom"
+import { PicContainer, Title, Container, Wrapper, Description, Ingredients } from './styles/recipe.styled';
 
 function Recipe() {
   
-   const [searchRecipe, setSearchRecipe] = React.useState([]);
-   
-    React.useEffect(()=> {
-        getSearch();
-    },[]);
+   const [fullRecipe, setFullRecipe] = React.useState({});
 
-   const getSearch = async (name) =>{
-        const api = await fetch (
-            `https://api.spoonacular.com/recipes/complexSearch?apiKey=${`c861de17b1ea4cd8bb78cc92a6cd4859`}&query=${name}`);
-        const datas = await api.json();
-        setSearchRecipe(datas.results);
-        console.log(datas.results);
+   let param = useParams();
+   
+   const fetchRecipe = async () =>{
+        const res = await fetch (
+          `https://api.spoonacular.com/recipes/${param.recipe}/information?apiKey=${`c861de17b1ea4cd8bb78cc92a6cd4859`}`);
+        const details = await res.json();
+        setFullRecipe(details);
+        console.log(details)
     };
+
+    React.useEffect(() => {
+       fetchRecipe();
+    }, );
   
- return (
+   return (
     <div>
-      <CardContainer>
-        {searchRecipe.map((item)=>{
-         return( <Card key={item.id} image={item.image} /> 
-        )}
-        )}
-      </CardContainer>  
+      <Container>
+        <PicContainer>
+          <img src={fullRecipe.image} alt={fullRecipe.title}></img>
+        </PicContainer>
+        <Wrapper>
+          <Title>{fullRecipe.title}</Title>
+          <Description>{fullRecipe.summary}</Description>
+          <h1>Ingredients</h1>
+          <Ingredients>
+            <ul>
+            {fullRecipe.extendedIngredients.map((ingredient)=>
+                <li key={ingredient.id}>{ingredient.original}</li>
+              )}
+            </ul>
+            </Ingredients>
+        </Wrapper>
+      </Container>  
         
     </div>
    )
