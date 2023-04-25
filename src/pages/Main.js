@@ -33,8 +33,9 @@ function Main() {
               vegetarian={<TbLetterV style={{color:"#99ff99"}}/>}  />
             ))}
         </CardContainer>
-        <Info />
+       
       </div>
+       <Info />
     </div>
   )
 }

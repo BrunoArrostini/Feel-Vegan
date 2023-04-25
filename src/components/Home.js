@@ -4,6 +4,7 @@ import {BiSearch} from "react-icons/bi"
 import {ImLeaf} from "react-icons/im"
 import vegan from "../images/vegan.png"
 import {useNavigate} from "react-router-dom"
+import {Link} from "react-router-dom"
 
 
 function Home() {
@@ -41,7 +42,7 @@ function Home() {
           </Searchbar>
           </Form>
        </SearchWrapper>                             
-       <NavBrand> Feel Veg <ImLeaf /> </NavBrand> 
+       <Link to={"/"}><NavBrand> Feel Veg <ImLeaf /> </NavBrand> </Link>
        <Text>Feel free to be yourself</Text>
      </Wrapper>
  </> 

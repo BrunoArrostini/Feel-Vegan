@@ -1,14 +1,15 @@
 import React from 'react'
 import { InfoContainer, TopWrapper, BottomWrapper, PicContainer, TextContainer, Text } from './styles/info.styled'
 import {Title} from "./styles/home.styled"
-import veg1 from "../images/pic1.webp"
+import zuchini from "../images/si.gif"
+import potato from "../images/no.gif"
 
 function Info() {
   return (
     <InfoContainer>
         <TopWrapper>
             <TextContainer>
-                <Title style={{textAlign:"center"}}>Benefits of vegetarian diet</Title>
+                <Title style={{textAlign:"left"}}>Benefits of vegetarian diet</Title>
                 <Text>
                   Maybe. Compared with meat eaters, vegetarians tend to consume less saturated fat and cholesterol and more vitamins C and E, dietary fiber, folic acid, potassium, magnesium, and phytochemicals (plant chemicals), such as carotenoids and flavonoids. 
                   As a result, they're likely to have lower total and LDL (bad) cholesterol, lower blood pressure, and lower body mass index (BMI), all of which are associated with longevity and a reduced risk for many chronic diseases.
@@ -32,12 +33,12 @@ function Info() {
                 </Text>
             </TextContainer>
             <PicContainer>
-                <img src={veg1} alt=""></img>
+                <img src={zuchini} alt=""></img>
             </PicContainer>
         </TopWrapper>
         <BottomWrapper>
             <TextContainer>
-                <Title style={{textAlign:"center"}}>Riks of vegetarian diet</Title>
+                <Title style={{textAlign:"left"}}>Riks of vegetarian diet</Title>
                 <Text>
                 Concerns about vegetarian diets have focused mainly on the following nutrients:<br/> 
                 <br/>
@@ -57,7 +58,7 @@ function Info() {
                 </Text>
             </TextContainer>
             <PicContainer>
-                <img src={veg1} alt=""></img>
+                <img src={potato} alt=""></img>
             </PicContainer>
         </BottomWrapper>
     </InfoContainer>

@@ -10,10 +10,3 @@ position: fixed;
 bottom: 0;
 width: 100%;
 `;
-
-export const NavBrand = styled.h1`
-color: white;
-font-size: 20px;
-font-weight: 700;
-margin-right: 10px;
-`;

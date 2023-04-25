@@ -4,7 +4,7 @@ import { PicContainer, Title, Container, Wrapper, Description, Ingredients } fro
 
 function Recipe() {
   
-   const [fullRecipe, setFullRecipe] = React.useState({});
+   const [fullRecipe, setFullRecipe] = React.useState([]);
 
    let param = useParams();
    
@@ -32,9 +32,7 @@ function Recipe() {
           <h1>Ingredients</h1>
           <Ingredients>
             <ul>
-            {fullRecipe.extendedIngredients.map((ingredient)=>
-                <li key={ingredient.id}>{ingredient.original}</li>
-              )}
+                 
             </ul>
             </Ingredients>
         </Wrapper>

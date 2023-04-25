@@ -3,42 +3,75 @@ import styled from "styled-components";
 export const InfoContainer = styled.div`
 display: flex;
 flex-direction: column;
-margin: 50px;
+width: 100%;
 `;
 
 export const TopWrapper = styled.div`
 display: flex;
 justify-content: center;
-margin-bottom: 30px;
+margin: 30px;
+width: auto;
+
+@media (max-width: 800px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+    width: 80%;
+    margin:0
+}
 `;
 
 export const BottomWrapper = styled.div`
 display: flex;
 justify-content: center;
-margin-bottom: 60px;
+flex-direction: row-reverse;
+margin: 30px;
+margin-bottom: 150px;
+width: auto;
+
+@media (max-width: 800px) {
+    display: flex;
+    flex-direction: column;
+}
 `;
 
 export const PicContainer = styled.div`
-width: 50%;
 height: 100%;
 align-self: center;
-
+width: auto;
 img{
     height: 300px;
+    width: auto;
 }
+
+@media (max-width:800px) {
+    width: 100%;
+  
+ img{
+    width: 100%;
+    height: 250px;
+ }   
+ } 
 `;
 
 export const TextContainer = styled.div`
-width: 50%;
-margin-right: 40px;
+width: auto;
+border: 3px solid beige;
 height: 300px;
-overflow-y: scroll;
+overflow-y: scroll;  
 `;
 
 export const Text = styled.p`
-margin-top: 15px;
+margin: 15px;
+letter-spacing: 0.3pt;
+font-weight: 300;
+font-family: Arial, Helvetica, sans-serif;
 
 strong{
-    color: lightgreen;
+    color: green;
 }
+@media (max-width:800px) {
+margin:20px ;
+ } 
 `;
