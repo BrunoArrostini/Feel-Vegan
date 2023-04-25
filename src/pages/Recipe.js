@@ -4,7 +4,7 @@ import { PicContainer, Title, Container, Wrapper, Description, Ingredients } fro
 
 function Recipe() {
   
-   const [fullRecipe, setFullRecipe] = React.useState([]);
+   const [fullRecipe, setFullRecipe] = React.useState({});
 
    let param = useParams();
    
@@ -13,12 +13,12 @@ function Recipe() {
           `https://api.spoonacular.com/recipes/${param.recipe}/information?apiKey=${`c861de17b1ea4cd8bb78cc92a6cd4859`}`);
         const details = await res.json();
         setFullRecipe(details);
-        console.log(details)
     };
 
     React.useEffect(() => {
        fetchRecipe();
-    }, );
+       // eslint-disable-next-line
+      }, [param.recipe]);
   
    return (
     <div>

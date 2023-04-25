@@ -11,6 +11,8 @@ display: flex;
 justify-content: center;
 margin: 30px;
 width: auto;
+border: 3px solid beige;
+border-radius: 15px;
 
 @media (max-width: 800px) {
     display: flex;
@@ -29,10 +31,15 @@ flex-direction: row-reverse;
 margin: 30px;
 margin-bottom: 150px;
 width: auto;
+border: 3px solid beige;
+border-radius: 15px;
 
 @media (max-width: 800px) {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    align-self: center;
+    width: 80%;
 }
 `;
 
@@ -40,6 +47,7 @@ export const PicContainer = styled.div`
 height: 100%;
 align-self: center;
 width: auto;
+
 img{
     height: 300px;
     width: auto;
@@ -57,7 +65,6 @@ img{
 
 export const TextContainer = styled.div`
 width: auto;
-border: 3px solid beige;
 height: 300px;
 overflow-y: scroll;  
 `;
