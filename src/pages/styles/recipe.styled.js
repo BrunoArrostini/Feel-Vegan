@@ -5,37 +5,49 @@ display: flex;
 justify-content: center;
 flex-direction: column;
 margin-top: 50px;
-border: 1px solid black;
+align-items: center;
 `;
 
 export const PicContainer = styled.div`
 display: flex;
 justify-content: center;
 align-items: center;
-border: 1px solid black;
+
+img{
+    width: 80%;
+    border-radius: 10px;
+    border: 2px solid gray;
+}
 `;
 
 export const Wrapper = styled.div`
 display: flex;
 justify-content: center;
 flex-direction: column;
-border: 1px solid black;
+margin-top: 10px;
 `;
 
 export const Title = styled.h1`
 text-align: center;
-border: 1px solid black;
 `;
 
 export const Description = styled.p`
-text-align: center;
 align-items: center;
-border: 1px solid black;
+width: 80%;
+margin: auto;
+margin-bottom: 25px;
 `;
 
 export const Ingredients = styled.div`
 display: flex;
 justify-content: center;
 flex-direction: column;
-border: 1px solid black;
+margin-bottom: 100px;
+text-align: left;
+font-size: 1.3rem ;
+align-items: center;
+
+li{
+    list-style: none;
+}
 `;

@@ -1,6 +1,7 @@
 import React from "react"
 import {useParams} from "react-router-dom"
 import { PicContainer, Title, Container, Wrapper, Description, Ingredients } from './styles/recipe.styled';
+import {FcCheckmark} from "react-icons/fc"
 
 function Recipe() {
   
@@ -13,6 +14,7 @@ function Recipe() {
           `https://api.spoonacular.com/recipes/${param.recipe}/information?apiKey=${`c861de17b1ea4cd8bb78cc92a6cd4859`}`);
         const details = await res.json();
         setFullRecipe(details);
+        console.log(details)
     };
 
     React.useEffect(() => {
@@ -28,11 +30,15 @@ function Recipe() {
         </PicContainer>
         <Wrapper>
           <Title>{fullRecipe.title}</Title>
-          <Description>{fullRecipe.summary}</Description>
-          <h1>Ingredients</h1>
+          <div>
+          <Description dangerouslySetInnerHTML={{__html: fullRecipe.summary}}></Description>
+          </div>
+          <h1 style={{textAlign:"center"}}>Ingredients </h1>
           <Ingredients>
             <ul>
-                 
+                {fullRecipe.extendedIngredients.map((ingredient=>{
+                  return <li key={ingredient.id}> <FcCheckmark style={{fontSize:"0.9rem"}}/> {ingredient.originalName}</li>
+                }))} 
             </ul>
             </Ingredients>
         </Wrapper>

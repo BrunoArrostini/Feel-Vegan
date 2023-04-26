@@ -47,6 +47,7 @@ export const PicContainer = styled.div`
 height: 100%;
 align-self: center;
 width: auto;
+background-color: beige;
 
 img{
     height: 300px;
@@ -67,6 +68,7 @@ export const TextContainer = styled.div`
 width: auto;
 height: 300px;
 overflow-y: scroll;  
+
 `;
 
 export const Text = styled.p`
