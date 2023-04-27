@@ -19,6 +19,12 @@ max-width: 230px;
 margin-bottom: 50px;
 margin-right: 10px;
 position: relative;
+cursor: pointer;
+
+&:hover{
+    transform: scale(0.98);
+    border: 2px solid #99ff99;;
+}
 `;
 
 export const TopWrapper = styled.div`
@@ -33,6 +39,7 @@ margin-left: 5px;
 margin-right: 5px;
 color: gray;
 font-weight: 400;
+height: 50px;
 `;
 
 export const Vegetarian = styled.h5`
@@ -48,6 +55,8 @@ export const Time = styled.p`
 margin-left: 5px;
 margin-right: 5px;
 font-size: 0.8rem;
+margin-bottom: 10px;
+color: black;
 `;
 
 export const BottomWrapper = styled.div`

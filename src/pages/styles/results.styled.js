@@ -28,8 +28,8 @@ margin-bottom: 50px;
 margin-right: 10px;
 
 &:hover{
-    transform: scale(1.1);
-    border: 3px solid lightgray;
+    transform: scale(0.98);
+    border: 2px solid #99ff99;
 }
 `;
 

@@ -6,6 +6,7 @@ import {TbLetterV} from "react-icons/tb"
 import {CiWheat} from "react-icons/ci"
 import {CardContainer} from "../components/styles/card.styled"
 import Info from '../components/Info'
+import { Link} from 'react-router-dom'
 
 function Main() {
 
@@ -21,19 +22,23 @@ function Main() {
       setRecipes(data.recipes);
     };
 
+ 
+
   return (
     <div>
       <Title>Find out vegetarian recipes</Title>
       <div className='main'>
         <CardContainer>
-           {recipes.map(recipe=> (
-             <Card  key={recipe.id} title={recipe.title}  image={recipe.image} name={recipe.title} time={recipe.readyInMinutes} 
-              vegan={recipe.vegan ? <TiLeaf style={{color:"green"}} /> : <TiLeaf style={{color: "red"}} />} 
-              glutenFree={recipe.glutenFree ? <CiWheat style={{color:"green"}} /> : <CiWheat style={{color:"red"}} /> }  
-              vegetarian={<TbLetterV style={{color:"#99ff99"}}/>}  />
-            ))}
+           {recipes.map((recipe)=>{
+             return (
+             <Link to={"/recipes/" + recipe.id} style={{textDecoration:"none"}}>
+                <Card  key={recipe.id} title={recipe.title}  image={recipe.image} name={recipe.title} time={recipe.readyInMinutes} 
+                vegan={recipe.vegan ? <TiLeaf style={{color:"green"}} /> : <TiLeaf style={{color: "red"}} />} 
+                glutenFree={recipe.glutenFree ? <CiWheat style={{color:"green"}} /> : <CiWheat style={{color:"red"}} /> }  
+                vegetarian={<TbLetterV style={{color:"#99ff99"}}/>} /> 
+            </Link>
+            )})}
         </CardContainer>
-       
       </div>
        <Info />
     </div>
