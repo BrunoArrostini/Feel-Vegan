@@ -17,6 +17,7 @@ function Results() {
 
     React.useEffect(() => {
         fetchResults(param.result);
+        window.scrollTo(150,250);
     }, [param.result]);
 
   return (

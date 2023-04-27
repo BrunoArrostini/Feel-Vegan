@@ -31,6 +31,12 @@ export const Title = styled.h1`
 text-align: center;
 `;
 
+export const SubTitle = styled.div`
+text-align: center;
+font-size: 35px;
+margin-bottom: 30px;
+`;
+
 export const Description = styled.p`
 align-items: center;
 width: 80%;
@@ -42,10 +48,10 @@ export const Ingredients = styled.div`
 display: flex;
 justify-content: center;
 flex-direction: column;
-margin-bottom: 100px;
 text-align: left;
 font-size: 1.3rem ;
-align-items: center;
+align-self: center;
+margin-bottom: 100px;
 
 li{
     list-style: none;
