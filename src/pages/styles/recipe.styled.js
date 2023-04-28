@@ -45,15 +45,14 @@ margin-bottom: 25px;
 `;
 
 export const Ingredients = styled.div`
+max-width: 350px;
+margin: auto;
 display: flex;
-justify-content: center;
-flex-direction: column;
-text-align: left;
-font-size: 1.3rem ;
-align-self: center;
+justify-content: left;
+align-items: center;
+flex-direction: row;
+overflow-x: scroll;
 margin-bottom: 100px;
-
-li{
-    list-style: none;
-}
+height: auto;
 `;
+

@@ -1,15 +1,16 @@
 import React from "react"
 import {useParams} from "react-router-dom"
 import { PicContainer, Title, Container, Wrapper, Description, Ingredients, SubTitle} from './styles/recipe.styled';
-import {FcCheckmark} from "react-icons/fc"
 import {TiLeaf} from "react-icons/ti"
 import {TbLetterV} from "react-icons/tb"
 import {CiWheat} from "react-icons/ci"
+import egg from "../images/egg.gif"
 
 function Recipe() {
   
    const [recipe, setRecipe] = React.useState({});
    const [ingredients, setIngredients] = React.useState([]);
+  
 
    let param = useParams();
    
@@ -43,13 +44,20 @@ function Recipe() {
             <Description dangerouslySetInnerHTML={{__html: recipe.summary}}></Description>
           </div>
           <h1 style={{textAlign:"center"}}>Ingredients </h1>
-          <Ingredients>
-            <ul>
-            {ingredients.map((ingredient)=>
-                 <li key={ingredient.id}> <FcCheckmark style={{fontSize:"0.9rem"}}/> {ingredient.originalName}</li>
-                )}
-            </ul>
-            </Ingredients>
+           <Ingredients>
+              {ingredients.map((ingredient)=>{
+                return(
+                  <div style={{display:" flex",flexDirection:"column", border:"1px solid gray", margin:"5px" }} >
+                    <div key={ingredient.id}>
+                      <img src={egg} style={{width:"100px", height:"120px"}}></img>
+                    </div>
+                    <div>
+                      <h6 style={{textAlign:"center"}}>{ingredient.name}</h6>
+                    </div>
+                  </div>
+                )
+                })}
+          </Ingredients>
         </Wrapper>
       </Container>  
         
