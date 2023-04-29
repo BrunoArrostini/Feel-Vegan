@@ -20,6 +20,7 @@ function Recipe() {
         const details = await res.json();
         setRecipe(details);
         setIngredients(details.extendedIngredients);
+        console.log(details)
     };
 
     React.useEffect(() => {
@@ -29,19 +30,19 @@ function Recipe() {
   
    return (
     <div>
-      <Container>
+      <Container key={recipe.id}>
         <PicContainer>
           <img src={recipe.image} alt={recipe.title}></img>
         </PicContainer>
         <Wrapper>
           <Title>{recipe.title}</Title>
           <SubTitle>
-              {recipe.vegan ? <TiLeaf style={{color:"green"}}/> : <TiLeaf style={{color:"red"}}/>}
+              {recipe.vegan ? <TiLeaf style={{color:"green",}}/> : <TiLeaf style={{color:"red"}}/>}
               {recipe.glutenFree ? <CiWheat style={{color:"green"}}/> : <CiWheat style={{color:"red"}}/>}
               <TbLetterV style={{color:"green"}}/>
           </SubTitle>
-          <div>
-            <Description dangerouslySetInnerHTML={{__html: recipe.summary}}></Description>
+          <div style={{fontWeight:"500"}}>
+            <Description dangerouslySetInnerHTML={{__html: recipe.instructions}}></Description>
           </div>
           <h1 style={{textAlign:"center"}}>Ingredients </h1>
            <Ingredients>
@@ -49,7 +50,7 @@ function Recipe() {
                 return(
                   <div style={{display:" flex",flexDirection:"column", border:"1px solid gray", margin:"5px" }} >
                     <div key={ingredient.id}>
-                      <img src={egg} style={{width:"100px", height:"120px"}}></img>
+                      <img src={egg} alt={""} style={{width:"100px", height:"120px"}}></img>
                     </div>
                     <div>
                       <h6 style={{textAlign:"center"}}>{ingredient.name}</h6>
