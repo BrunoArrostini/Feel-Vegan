@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React from 'react'
 import {useParams, Link} from "react-router-dom"
 import {Container, TopWrapper, PicContainer, Title, BottomWrapper, Grid, Covertitle} from "./styles/results.styled"
@@ -7,12 +8,15 @@ function Results() {
     const [allResults, setAllResults] = React.useState([]);
     let param = useParams();
 
-    const fetchResults = async (name) => {
-        const api = await fetch(
-            `https://api.spoonacular.com/recipes/complexSearch?apiKey=${`c861de17b1ea4cd8bb78cc92a6cd4859`}&query=${name}`
-        );
-        const datas = await api.json();
-        setAllResults(datas.results);
+    const fetchResults = (name) => {
+        axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${`c861de17b1ea4cd8bb78cc92a6cd4859`}&query=${name}`)
+        .then(res=>{
+            const details = res.data.results
+           setAllResults(details); 
+        })
+        .catch(err=>{
+            return <p>Please retry later...</p>
+        })
     };
 
     React.useEffect(() => {

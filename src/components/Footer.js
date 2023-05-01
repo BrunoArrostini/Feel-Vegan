@@ -8,8 +8,13 @@ function Footer() {
     return(
         <Container>
             <div style={{display:"flex", justifyContent:"center"}}>
-                <div>
-                  <Link to={"/"} style={{textDecoration:"none", color:"black", alignSelf:"center", position:"fixed", bottom:"7px", left:"20px"}}><GrHomeRounded style={{fontSize:"22px"}}/></Link> 
+                <div style={{}}>
+                  <Link to={"/"} style={{textDecoration:"none", color:"black", alignSelf:"center", position:"fixed", bottom:"0", left:"22px"}}>
+                    <div style={{display:"flex", flexDirection:"column", justifyContent:"center", alignItems:"center"}}>
+                      <GrHomeRounded style={{fontSize:"20px"}}/>
+                      <p style={{fontSize:"15px"}}>Home</p> 
+                    </div>  
+                  </Link> 
                 </div>
                 <div>
                   <Link to={"https://brunoarrostini.github.io"} style={{textDecoration:"none", color:"black"}}><p>Bruno Arrostini <BiPaperPlane style={{fontSize:"16px"}}/> </p></Link>

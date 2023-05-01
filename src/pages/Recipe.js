@@ -5,6 +5,7 @@ import {TiLeaf} from "react-icons/ti"
 import {TbLetterV} from "react-icons/tb"
 import {CiWheat} from "react-icons/ci"
 import egg from "../images/egg.gif"
+import axios from "axios";
 
 function Recipe() {
   
@@ -14,13 +15,16 @@ function Recipe() {
 
    let param = useParams();
    
-   const fetchRecipe = async () =>{
-        const res = await fetch (
-          `https://api.spoonacular.com/recipes/${param.recipe}/information?apiKey=${`c861de17b1ea4cd8bb78cc92a6cd4859`}`);
-        const details = await res.json();
-        setRecipe(details);
-        setIngredients(details.extendedIngredients);
-        console.log(details)
+   const fetchRecipe = () =>{
+        axios.get(`https://api.spoonacular.com/recipes/${param.recipe}/information?apiKey=${`c861de17b1ea4cd8bb78cc92a6cd4859`}`)
+        .then(res=>{
+          const recipes = res
+          setRecipe(recipes.data);
+          setIngredients(recipes.data.extendedIngredients);
+        })
+        .catch(err=>{
+          return <p>Plaese retry later</p>
+        })
     };
 
     React.useEffect(() => {

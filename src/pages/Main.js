@@ -7,6 +7,7 @@ import {CiWheat} from "react-icons/ci"
 import {CardContainer} from "../components/styles/card.styled"
 import Info from '../components/Info'
 import { Link} from 'react-router-dom'
+import axios from 'axios'
 
 function Main() {
 
@@ -15,11 +16,15 @@ function Main() {
       getRecipes()
       }, []);
 
-     const getRecipes = async () => {
-      const api = await fetch(
-      `https://api.spoonacular.com/recipes/random?apiKey=${`c861de17b1ea4cd8bb78cc92a6cd4859`}&number=9&tags=vegetarian`);
-      const data = await api.json();
-      setRecipes(data.recipes);
+     const getRecipes = () => {
+       axios.get(`https://api.spoonacular.com/recipes/random?apiKey=${`c861de17b1ea4cd8bb78cc92a6cd4859`}&number=9&tags=vegetarian`)
+      .then(res=>{
+        const detail = res.data.recipes;
+        setRecipes(detail);
+      })
+      .catch(err=>{
+        return <p>Please retry later...</p>
+      })  
     };
 
  
