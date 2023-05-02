@@ -49,5 +49,5 @@ You can try the app following this link:
 
 ## License 
 
-City Advisor is licensed by <a href="https://github.com/BrunoArrostini/Feel-Vegan/blob/main/LICENSE.md"> MIT LICENSE.
+Feel Veg is licensed by <a href="https://github.com/BrunoArrostini/Feel-Vegan/blob/main/LICENSE.md"> MIT LICENSE.
 
