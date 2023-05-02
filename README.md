@@ -1,7 +1,7 @@
 # Feel-Vegan
 
 
-## Overview ![image](https://user-images.githubusercontent.com/115611709/235648364-f13fb9f7-8243-41ef-b662-83d0b4c7d337.png)
+## Overview 📖
 **Feel Veg** is a single page app based on vegetarian recipes.
 
 The app is structured in two main sections:
@@ -44,7 +44,7 @@ Conditional rendering has been used to display the info section at the bottom.
 
 You can try the app following this link:
 
-<a href="https://feel-vegan.netlify.app"><img src="src/assets/img/si.gif"></a>
+<a href="https://feel-vegan.netlify.app"><img src="src/images/si.gif"></a>
 
 
 ## License 
