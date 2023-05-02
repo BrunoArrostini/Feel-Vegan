@@ -13,11 +13,7 @@ function Footer() {
   const [isHover, setIsHover] = React.useState(false);
 
   const handleHover = () =>{
-    setIsHover(true);
-  };
-
-  const outHover = () => {
-    setIsHover(false);
+    isHover ? setIsHover(false) : setIsHover(true)
   };
 
     return(
@@ -34,7 +30,7 @@ function Footer() {
                 <div>
                   <Link to={"https://brunoarrostini.github.io"} style={{textDecoration:"none", color:"black"}}><p>Bruno Arrostini <BiPaperPlane style={{fontSize:"16px"}}/> </p></Link>
                 </div> 
-                <div style={{position:"fixed", right:"22px", bottom:"3px"}} onMouseOver={handleHover} onMouseOut={outHover}>
+                <div style={{position:"fixed", right:"22px", bottom:"3px"}} onClick={handleHover}>
                   <BsInfoCircle style={{fontSize:"25px", cursor:"pointer"}} />
                 </div>
                 {isHover && (
