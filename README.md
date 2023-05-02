@@ -49,5 +49,5 @@ You can try the app clicking on potato:
 
 ## License 
 
-Feel Veg is licensed by <a href="https://github.com/BrunoArrostini/LICENSE.md"> MIT LICENSE.
+Feel Veg is licensed by <a href="https://github.com/BrunoArrostini/Feel-Vegan/blob/main/LICENSE.md"> MIT LICENSE.
 
