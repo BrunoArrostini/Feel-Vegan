@@ -12,3 +12,25 @@ justify-content: center;
 align-items: center;
 `;
 
+export const Info = styled.div`
+background-color: white;
+position: fixed;
+bottom: 51px;
+right: 3px;
+left: 3px;
+width: 100%;
+height: 100px;
+display: flex;
+justify-content: space-around;
+border-radius: 10px;
+border: 1px solid #99ff99;
+
+`;
+
+export const IconsWrapper = styled.div`
+display: flex;
+flex-direction: column;
+justify-content: center;
+margin: 5px;
+align-items: center;
+`;
