@@ -1,4 +1,4 @@
-# Feel-Vegan
+# Feel Veg
 
 
 ## Overview 📖
@@ -42,12 +42,12 @@ Conditional rendering has been used to display the info section at the bottom.
 
 ## Link 🔗
 
-You can try the app following this link:
+You can try the app clicking on potato:
 
-<a href="https://feel-vegan.netlify.app"><img src="src/images/si.gif"></a>
+<a href="https://feel-vegan.netlify.app"><img src="src/images/no.gif"></a>
 
 
 ## License 
 
-Feel Veg is licensed by <a href="https://github.com/BrunoArrostini/Feel-Vegan/blob/main/LICENSE.md"> MIT LICENSE.
+Feel Veg is licensed by <a href="https://github.com/BrunoArrostini/Feel-Vegan/LICENSE.md"> MIT LICENSE.
 
