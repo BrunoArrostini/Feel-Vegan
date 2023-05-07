@@ -1,8 +1,8 @@
 import React from "react";
 import {Routes, Route} from "react-router-dom"
 import Main from "./Main";
-import Recipe from "./Recipe";
-import Results from "./Results";
+import Recipe from "./recipe/Recipe";
+import Results from "./results/Results";
 
 
 function Pages() {
