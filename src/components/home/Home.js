@@ -6,22 +6,20 @@ import vegan from "../../images/vegan.png"
 import {useNavigate} from "react-router-dom"
 import {Link} from "react-router-dom"
 import {Helmet} from "react-helmet-async"
+import {useFormik} from "formik"
 
 function Home() {
 
- const [formData, setFormData] = React.useState({data:""});
-
-  
- const handleChange = (e) => {
-    setFormData(e.target.value)
-  } 
+ const formik = useFormik({
+  initialValues:{
+    data:""
+  },
+  onSubmit: values => {
+    redirect("/results/" + values.data)
+  }
+ });
  
   const redirect = useNavigate();
-
- const handleSubmit = (e) => {
-    e.preventDefault();
-    redirect("/results/" + formData)
-  }
 
  return(
  <>
@@ -53,13 +51,13 @@ function Home() {
         minHeight:"250px"                                                                
         }}></img>
        <SearchWrapper>
-          <Form onSubmit={handleSubmit}>
-            <BiSearch className="lens" />
+          <Form onSubmit={formik.handleSubmit}>
+            <BiSearch className="lens" onClick={formik.handleSubmit} />
             <Searchbar 
               type= "text" 
               name="data"
-              value={formData.data}
-              onChange={handleChange}
+              value={formik.values.data}
+              onChange={formik.handleChange}
               placeholder= "Search for a food...">
           </Searchbar>
           </Form>

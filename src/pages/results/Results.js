@@ -2,21 +2,28 @@ import axios from 'axios';
 import React from 'react'
 import {useParams, Link} from "react-router-dom"
 import {Container, TopWrapper, PicContainer, Title, BottomWrapper, Grid, Covertitle} from "./results.styled"
+import {AiOutlineLoading} from "react-icons/ai"
+import {Loader} from "../recipe/recipe.styled"
 
 function Results() {
-
+    
+    const [loading , setLoading] = React.useState(false); 
     const [allResults, setAllResults] = React.useState([]);
     let param = useParams();
 
-    const fetchResults = (name) => {
-        axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&query=${name}`)
-        .then(res=>{
+    const fetchResults = async (name) => {
+        try{
+            setLoading(true);
+            const res = await axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&query=${name}`);
             const details = res.data.results
-           setAllResults(details); 
-        })
-        .catch(err=>{
+            setLoading(false);
+            setAllResults(details);
+        }
+        catch(err){
+            setLoading(false);
+            console.log(err);
             return <p>Please retry later...</p>
-        })
+        }
     };
 
     React.useEffect(() => {
@@ -28,7 +35,7 @@ function Results() {
         <>
          <Covertitle>Best Recipes with {param.result}</Covertitle>
             <Grid>
-             {allResults.map((item)=>{
+             { loading ? <Loader><AiOutlineLoading style={{color:"#99ff99",fontSize:" 150px"}}/></Loader> : allResults.map((item)=>{
             return (
                 <Container key={item.id}>
                   <Link to={"/recipes/" + item.id} style={{textDecoration:"none"}}>

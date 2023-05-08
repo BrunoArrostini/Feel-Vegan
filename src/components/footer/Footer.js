@@ -28,7 +28,7 @@ function Footer() {
                   </Link> 
                 </div>
                 <div>
-                  <Link to={"https://brunoarrostini.github.io"} style={{textDecoration:"none", color:"black"}}><p>Bruno Arrostini <BiPaperPlane style={{fontSize:"16px"}}/> </p></Link>
+                  <Link to={"https://brunoarrostini.netlify.app"} style={{textDecoration:"none", color:"black"}}><p>Bruno Arrostini <BiPaperPlane style={{fontSize:"16px"}}/> </p></Link>
                 </div> 
                 <div style={{position:"fixed", right:"22px", bottom:"3px"}} onClick={handleHover}>
                   <BsInfoCircle style={{fontSize:"25px", cursor:"pointer"}} />

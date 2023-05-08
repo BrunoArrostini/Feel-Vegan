@@ -1,30 +1,35 @@
 import React from "react"
 import {useParams} from "react-router-dom"
-import { PicContainer, Title, Container, Wrapper, Description, Ingredients, SubTitle} from './recipe.styled';
+import { PicContainer, Title, Container, Wrapper, Description, Ingredients, SubTitle, Loader} from './recipe.styled';
 import {TiLeaf} from "react-icons/ti"
 import {TbLetterV} from "react-icons/tb"
 import {CiWheat} from "react-icons/ci"
 import egg from "../../images/egg.gif"
 import axios from "axios";
+import {AiOutlineLoading} from "react-icons/ai"
 
 function Recipe() {
   
    const [recipe, setRecipe] = React.useState({});
    const [ingredients, setIngredients] = React.useState([]);
-  
+   const [loading , setLoading] = React.useState(false); 
 
    let param = useParams();
    
-   const fetchRecipe = () =>{
-        axios.get(`https://api.spoonacular.com/recipes/${param.recipe}/information?apiKey=${process.env.REACT_APP_API_KEY}`)
-        .then(res=>{
-          const recipes = res
-          setRecipe(recipes.data);
-          setIngredients(recipes.data.extendedIngredients);
-        })
-        .catch(err=>{
-          return <p>Plaese retry later</p>
-        })
+   const fetchRecipe = async () =>{
+    try{
+      setLoading(true);
+      const res = await axios.get(`https://api.spoonacular.com/recipes/${param.recipe}/information?apiKey=${process.env.REACT_APP_API_KEY}`)
+      const recipes = res
+      setLoading(false);
+      setRecipe(recipes.data);
+      setIngredients(recipes.data.extendedIngredients);
+    }
+    catch(err){
+      setLoading(false);
+      console.log(err);
+      return <p>Plaese retry later</p>
+    }  
     };
 
     React.useEffect(() => {
@@ -34,6 +39,13 @@ function Recipe() {
   
    return (
     <div>
+      {loading ? <Loader><AiOutlineLoading 
+      style={{
+        color:"#99ff99",
+        fontSize:" 150px"
+      }}
+      />
+      </Loader> :
       <Container key={recipe.id}>
         <PicContainer>
           <img src={recipe.image} alt={recipe.title}></img>
@@ -65,7 +77,7 @@ function Recipe() {
           </Ingredients>
         </Wrapper>
       </Container>  
-        
+  }  
     </div>
    )
 }
